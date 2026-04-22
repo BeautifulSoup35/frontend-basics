@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        a:link {
+            color: blue;
+        }
+        a:visited {
+            color: red;
+        }
+        .btn {
+            display: inline-block;
+            outline: 1px solid #888;
+            font-size: 13.3333px;
+            padding: 2px 7px;
+            border-radius: 2.5px;
+            border: 1px solid transparent;
+            background-color: #eee;
+            /*  */
+            color: black;
+
+            cursor: default;
+        }
+        
+        .btn:hover {
+            
+            border: 1px solid #555;
+            background-color: #ddd;
+        }
+        .btn:active {
+            border: 1px solid #aaa;
+            background-color: #fefefe;
+        }
+        .btn:disabled {
+            border: #ddd;
+            background-color: red;
+        }
+        </style>
+</head>
+<body>
+    <div>
+        <a class="btn"  href="http://google.com">확인</a>
+        <button class="btn" disabled>확인</button>
+        <div class="btn">확인</div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 바디가 영역이 없었어서 안뜨는데 vh는 필수로 body 해줘야한다 */
+            margin: 0;
+            height: 100vh;
+            background-image: url("./images/bg.jpg");
+            background-repeat: no-repeat;
+            background-position:  center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            /* 오른쪽정렬로 한 페이지에 있어라 */
+            /* display: flex;
+            /* 열방향으로 변경 
+            flex-direction: column; */
+            padding: 1px;
+            box-sizing: border-box;
+            width: 1200px;
+            height: 1300px;
+            margin: 0 auto;
+            background: linear-gradient(109deg,rgba(42, 123, 155, 1) 0%, rgba(60, 153, 146, 1) 20%, rgba(87, 199, 133, 1) 50%, rgba(166, 211, 107, 1) 76%, rgba(237, 221, 83, 1) 100%);;
+            /* 넘어갔을때 스크롤를 만들어 제지 */
+            /* overflow: auto; */
+            /* 넘어가는 애들 전부 자르기 -> 부모의 영역에 경계 생기도록  */
+            overflow: hidden;
+        }
+        .profile-image{
+            box-sizing: border-box;
+            margin: 50px auto;
+            border: 1px solid #dbdbdb;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            
+            box-shadow: 0 0 10px 5px #00000044;
+
+            background-image: url(/basic2/images/profile_handsome.png);
+            background-position:  center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        <div class="profile-image"></div>
+        
+    </div>
+</body>
+</html>

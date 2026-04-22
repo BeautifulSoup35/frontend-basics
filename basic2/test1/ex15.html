@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tag {
+            /* span은 inline으로 한 라인 자체를 전부 차지하는 속성이 있는데 글자를 적으면서 
+            너비가 결정되고 그 너비에 따라 높이가 결정된다
+            너비와 높이의 설정이 먹히지 않는다
+            */
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+        background-color: #eee;
+        text-align: center;
+        margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <span class="tag">Java</span>
+    <span class="tag">Python</span>
+    <span class="tag">CSS</span>
+</body>
+</html>
