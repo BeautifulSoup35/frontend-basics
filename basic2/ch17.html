@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: flex-start;
+            /* 컨텐츠의 요소만큼 크기가 할당되서 공간 할당이 안된다 */
+            border: 1px solid #222;
+            gap: 20px;
+            padding: 10px;
+            width: 400px;
+            /* 안의 컨텐츠에 따라서 크기 조절 */
+
+            height: 30px;
+            
+        }
+        li {
+            border: 1px solid #222;
+            width: 100px;
+            /* display: flex; */ 
+            /* flex-grow: 1;
+            flex-shrink: 1; */
+            flex: 1 1;
+           
+            /* 남은공간을 1/n를 해서 나눠갖는다 */
+
+
+            height: 20px;
+        }
+        li.item {
+            flex-grow: 2;
+            /* 1대1에서 해당 클래스의 태그는 더 가져가겠다 */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <!-- <li><a href="">회사소개</a></li>
+            <li><a href="">이용안내</a></li>
+            <li><a href="">제품소개</a></li>
+            <li><a href="">고객지원</a></li>
+            <li><a href="">자료실</a></li>
+            <li><a href="">이용안내</a></li>
+            <li><a href="">제품소개</a></li> -->
+            <!-- <li class="item"></li> -->
+            <li>이용안내</li>
+            <li class="item">제품소개</li>
+            <!-- <li></li>
+            <li></li>
+             -->
+        </ul>
+    </nav>
+</body>
+</html>
