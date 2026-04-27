@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+
+       `month`(1~12)를 입력받아 계절을 출력하시오.
+
+`case` 묶음(fall-through)을 활용하시오.
+
+- 봄: 3, 4, 5월
+- 여름: 6, 7, 8월
+- 가을: 9, 10, 11월
+- 겨울: 12, 1, 2월
+        */
+        let month = 7;
+
+        switch (month) {
+            case 3:
+            case 4:
+            case 5:
+                console.log("봄");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                console.log("여름");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                console.log("가을");
+                break;
+            case 12:
+            case 1:
+            case 2:
+                console.log("겨울");
+                break;
+        }
+        
+    </script>
+</body>
+</body>
+</html>

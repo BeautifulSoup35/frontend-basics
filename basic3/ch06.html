@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            html, body {
+                 margin: 0;
+                 height: 100vh;
+            }
+            .container {
+                 display: flex;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: center;
+                 margin: 0 auto;
+                 /* bording -> padding */
+                 width: 1200px;
+                 height: 100%;
+
+                 overflow: auto;
+            }
+
+            .card {
+                 display: flex;
+                flex-direction: column;
+                 justify-content: center;
+                 align-items: center;
+                 box-sizing: border-box;
+                 width: 500px;
+                 border: 1px solid #dbdbdb;
+                 box-shadow: 0 0 5px #00000044;
+                 padding: 20px;
+                
+            }
+            .input-box {
+                position: relative;
+                flex-direction: column;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #dbdbdb;
+                border-radius: 4px;
+                padding: 5px 10px;
+                width: 360px;
+                height: 50px;
+                overflow: hidden;
+
+                & > label {/* 부모의 요소들 */
+                    transition: all 0.3s ease-in-out;
+                    position: absolute;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    left: 10px;
+                    background-color: transparent;
+                    font-size: 14px;
+                    color: #444;
+                }
+                & > input {
+                    transition: all 0.3s ease-in-out;
+                    position: relative;
+                    z-index: 10;
+                    outline: none;
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #00000000;
+                    color: #444;
+
+                }
+
+            }
+
+            .input-is-not-empty {
+                & > label {
+                    font-size: 12px;
+                    top: 25%;
+                }
+                & > input {
+                    top: 30%;
+                    height: 80%;
+
+                }
+            }
+            .register-button {
+                display: flex;
+                box-sizing: border-box;
+                justify-content: center;
+                align-items: center;
+
+                border: 1px solid #dbdbdb;
+                border-radius: 4px;
+                width: 100%;
+                height: 40px;
+                background-color: #1959b9;
+                color: #fafafa;
+                cursor: pointer;
+                
+                &:hover {
+                    background-color: #164b99;
+                }
+                &:active {
+                    background-color: #0d2b57;
+
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="input-box">
+                    <input type="text" id="un" name="username">
+                    <label for="un">사용자 이름</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="pw" name="password">
+                    <label for="pw">사용자 비밀번호</label>
+                </div>
+                <button class="register-button">사용자 정보 등록</button>
+            </div>
+        </div>
+        
+        <script>
+            let userList = [];
+
+            function autoIncrement() {
+                let currentId = 0;
+                return function () {
+                    currentId++;
+                    return currentId;
+                }
+            }
+
+            const getNewId = autoIncrement(); //id 증가
+
+
+
+            const inputBoxs = document.querySelectorAll(".input-box"); //input박스의 요소들을 다 들고
+            // console.log(inputBoxs);
+                /*0
+                    : 
+                    div.input-box.input-is-not-empty
+                    1
+                    : 
+                    div.input-box
+                */
+               for(let inputBox of inputBoxs) {
+                const inputElement = inputBox.querySelector("input");
+                inputElement.onfocus = (event) => {//포커스가 갔을때
+                    inputBox.classList.add("input-is-not-empty");
+                }
+                inputElement.onblur = (event) => {//포커스가 갔을때
+                    //target == input
+                    if(!event.target.value) {//value값이 null일때만 제거하라
+                        inputBox.classList.remove("input-is-not-empty");
+                    }
+                }
+                
+               }
+               
+            const registerButton = document.querySelector(".register-button");
+            registerButton.onclick  = () => {
+                const inputs = Array.from(inputBoxs).map(inputBox => inputBox.querySelector("input"));
+                let newUser = {
+                    id: getNewId(),
+                }
+                Array.from(inputs).forEach(element => {
+                    newUser = {
+                        ...newUser,
+                        [element.name] : element.value,
+
+                    }
+                });
+                userList = [
+                    ...userList,
+                    newUser
+                ];
+                
+                console.log(userList);
+               }
+
+        </script>    
+    </body>
+</html>

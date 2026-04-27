@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+            `n`의 팩토리얼(`n!`)을 **재귀 함수**로 계산하는 `factorial` 함수를 작성하시오.
+
+            `n = 0`일 때 `1`을 반환하는 기저 조건을 반드시 포함하시오.
+
+            ```jsx
+            // 여기에 코드를 작성하세요
+
+            console.log(factorial(0)); // 1
+            console.log(factorial(5)); // 120
+            console.log(factorial(7)); // 5040
+```
+            */
+           // 1 ~ n 까지 곱하기 
+           // 9 
+           let sum = 1;
+            let sum2 = 1;
+            function factorial1 (n){
+                for(let i =0 ; i < n; i++) {
+                    if(n === 1) return 1;
+                    sum2 *= (i+1);
+
+                }
+            }
+            function factorial (n) {
+                if (n === 0) return 1;
+                if ( n === 1) return sum;
+                sum *= n;
+                return factorial(n - 1);
+            }
+
+
+
+            function factorial2 (n) {
+                if (n === 0) return 1;
+                if ( n === 1) return 1;
+                return n * factorial(n - 1);
+            }
+
+            console.log(factorial(5));
+        </script>
+    </body>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+
+       ### 문제 13 — 조건부 로그인 처리
+
+`inputId = "admin"`, `inputPw = "1234"`를 선언하고,
+
+올바른 ID와 비밀번호(`adminId = "admin"`, `adminPw = "1234"`)와 비교하여
+
+`"로그인 성공"` 또는 `"로그인 실패"` 메시지를 출력하시오.
+
+ID가 틀렸을 때와 비밀번호가 틀렸을 때 메시지를 다르게 하시오.
+        */
+
+        let adminId = "als";
+        let adminPw = 3456;
+
+        let inputId = "admin";
+        let inputPw = "1234";
+        
+        if (adminId == inputId && adminPw ===inputPw) {
+            console.log("로그인 성공");
+            return;
+        }
+            console.log("로그인 실패");
+
+        if (adminId != inputId) {
+            console.log("아이디 확인 필요");
+
+        }
+
+        if (adminPw !== inputPw) {
+            console.log("비밀번호 확인 필요");
+
+        }
+
+        
+    </script>
+</body>
+</body>
+</html>

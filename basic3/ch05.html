@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //배열 객체
+            //배열 선언 초기화
+            const arr = [];
+            const arr2 = new Array();
+
+
+            const student = [];
+            const s1 = {
+                name :"권민주",
+                age :"23",
+            }
+            const s2 = {
+                name :"권주",
+                age :"22",
+            }
+
+            student.push(s1);
+            student.push(s2);
+
+            const student2 = [
+                {
+                     name :"권민주",
+                    age :"23",
+                },
+                {
+                    name :"권주",
+                    age :"22",
+                }
+            ];
+
+            console.log(student2);
+
+            const student3 = [
+                ...student2,//스프레드 문법(카피)
+                {
+                    name :"권민",
+                    age :"23",
+                },
+            ]
+            console.log(student3);
+
+            const student4 = [
+                ...student2,
+                {
+                    ...student3[2],
+                    address: "북구",   
+                }
+            ]
+            console.log(student4);
+
+
+            const nums = [10, 20, 30, 40, 50];
+            const nums2 = [...nums, 50];
+
+
+            const user = {
+                username: "aaa",
+                password: "1234",
+            }
+
+            const user2 = {
+                ...user,
+                name : "권민주",
+            }
+            console.log(user);
+            console.log(user2);
+
+        </script>    
+    </body>
+</html>

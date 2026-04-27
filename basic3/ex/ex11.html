@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+
+        `day` 변수에 1~7 숫자를 입력하면
+
+        해당 요일 이름(`월요일`~`일요일`)을 출력하는 `switch`문을 작성하시오.
+
+        범위 밖의 숫자는 `"잘못된 입력"`을 출력하시오.
+        */
+        let day = 3;
+        let date;
+
+        switch (day) {
+            case 1:
+                date = "월";
+                break;
+            case 2:
+                date = "화";
+                break;
+            case 3:
+                date = "수";
+                break;
+            case 4:
+                date = "목";
+                break;
+            case 5:
+                date = "금";
+                break;
+            case 6:
+                date = "토";
+                break;
+            case 7:
+                date = "일";
+                break;
+            default:
+                date = "잘못된 입력";
+                break;
+        }
+
+        console.log(date);
+    </script>
+</body>
+</html>

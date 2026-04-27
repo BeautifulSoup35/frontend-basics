@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+이름(`name`)과 인사말(`greeting`)을 매개변수로 받는 함수 `sayHello`를 작성하시오.
+
+`greeting`의 기본값은 `"안녕하세요"`로 설정하시오.
+        */
+
+        function sayHello (name, greeting) {
+            console.log(greeting??="안녕하세요", ", " + name + "님!");
+        }        
+        function sayHello (name, greeting = "안녕하세요") {
+            console.log(`${greeting}, ${name}님!`);
+        }        
+        function sayHello (name, greetin) {
+            if(greetin == undefined) {
+                greetin = "안녕하세요";
+            }
+            console.log(`${greeting}, ${name}님!`);
+        }        
+        sayHello("준일");           // 출력: 안녕하세요, 준일님!
+        sayHello("준일", "반갑습니다");
+       //ex19.html:17 안녕하세요 , 준일님!
+        // ex19.html:17 반갑습니다 , 준일님 -> 쉼표 사이에 띄워짐
+    </script>
+</body>
+</body>
+</html>

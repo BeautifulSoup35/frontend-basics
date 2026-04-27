@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+`price` 변수에 상품 가격을 저장하고 아래 조건을 검사하시오.
+
+1. `price`가 숫자가 아니면 → `"숫자를 입력하세요"` 출력 (`typeof` 사용)
+2. `price`가 0 이하이면 → `"가격은 0보다 커야 합니다"` 출력
+3. 정상이면 → `"상품 가격: {price}원"` 출력
+        */
+
+        let price = "djfksdjf";
+
+        if (!((typeof price) == Number)) {
+            console.log("숫자를 입력하세요");
+            return;
+        }
+        if (price < 0) {
+            console.log("가격은 0보다 커야합니다.");
+            return;
+            
+        }
+        console.log("상품가격: {%d}원",price);
+        
+
+        
+    </script>
+</body>
+</body>
+</html>

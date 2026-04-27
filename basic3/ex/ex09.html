@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // username = null
+        
+        let score = 85;
+        score = 0 + (score / 10) - (score % 10 / 10) ;
+        
+        let grad = 'f';
+        switch (score) {
+            case 9 : 
+                grad = 'A';
+                break;
+            case 8 : 
+                grad = 'B';
+                break;
+            case 7 : 
+                grad = 'c';
+                break;
+            case 6 : 
+                grad = 'D';
+                
+                break;
+            default:
+                grad = 'error';
+                break;
+            
+                
+        }
+        console.log(grad);
+    </script>
+</body>
+</html>

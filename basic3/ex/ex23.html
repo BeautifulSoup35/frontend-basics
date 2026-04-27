@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+            호출할 때마다 카운트를 1씩 증가시키는 `makeCounter` 함수를 작성하시오.
+
+            클로저를 이용하여 카운트 값이 외부에서 직접 수정되지 않도록 하시오.
+            */
+           function a () {
+            
+            let num = 0;
+            return function () {
+                //리턴으로 함수를 준다
+                num++;    
+                return num;
+            }       
+
+           }
+
+           const b = a ();//a의 함수가 b가 된다.
+           console.log(b());
+        </script>
+    </body>
+    </body>
+</html>

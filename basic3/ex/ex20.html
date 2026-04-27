@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+
+                여러 개의 숫자를 받아 합계와 평균을 객체로 반환하는 함수 stats를 작성하시오.
+            */
+    // 여기에 코드를 작성하세요
+                function stats (...parms) {
+                    let sum = 0;
+                    // console.log(parms); 배열로 바꿔서 들어옴
+                    for (let i = 0; i < parms.length; i++){
+                        sum += parms[i];
+                    }
+                    return {
+                         "sum" : sum,
+                         "avg" : sum / parms.length,
+                        }
+                }
+
+            console.log(stats(10, 20, 30));        // 객체로 반환하라
+            console.log(stats(5, 15, 25, 35, 40)); // { sum: 120, avg: 24 }
+            
+        </script>
+    </body>
+    </body>
+</html>

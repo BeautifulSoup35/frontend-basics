@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+아래 일반 함수를 **화살표 함수**로 변환하시오.
+
+가능한 경우 중괄호와 `return`을 생략하시오.
+        */
+
+        // function greet(name) {
+        //     return "안녕하세요, " + name + "님!";
+        // }
+        // function square(n) {
+        //     return n * n;
+        // } 
+        //  function isEven(n) {
+        //     return n % 2 === 0;
+        // }  
+        greet = name => "안녕하세요, " + name + "님!";
+         
+        square = n => n * n;
+        
+        isEven = n => n % 2 === 0;
+
+        console.log(greet("권"));
+        console.log(square(5));
+        console.log(isEven(3));
+        
+
+        
+
+       
+    </script>
+</body>
+</body>
+</html>
