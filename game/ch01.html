@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            flex-direction: row;
+            
+            background-color: yellow;
+            height: 100%;
+        }
+        .user {
+            display: flex;
+            flex-direction: column;
+            box-lines: line;
+            width: 50%;
+            background-color: brown;
+        }
+        .boss {
+            display: flex;
+            flex-direction: column;
+
+            width: 50%;
+            background-color: blueviolet;
+        }
+
+        .hp {
+            border: 1px solid #444;
+            border-radius: 4px;
+            margin: 0px 10px 20px 0px;
+            background-color: #dbdbdb;
+        }
+        .charicter {
+            border: 1px solid #444;
+            border-radius: 4px;
+            margin: 0px 10px 20px 0px;
+            background-color: #dbdbdb;
+
+            height: 100px;/* 자시의 옆 넓이에 맞춰서? */
+        }
+        .chating {
+            border: 1px solid #444;
+            border-radius: 4px;
+            margin: 0px 10px 20px 0px;
+
+            height: 50px;
+            background-color: #dbdbdb;
+        }
+        .vs {
+            color: red;
+            font-size: 50px;
+            transform: translateY(10%);
+
+            background-color: yellow;
+        }
+        .btn {
+            background-color: #2439f3;
+            border-radius: 4px;
+            color: #dbdbdb;
+
+            &:hover {
+            background-color: #1e30d1;
+
+            }
+            &:active {
+                background-color: #17259b;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="user">
+            <div class="hp">체력바</div>
+            <div class="charicter">캐릭터</div>
+            <div class="chating">
+                <button class="btn">에어컨 공격</button>
+                <button class="btn">주식</button>
+                <button class="btn">지각생 다수 발생</button>
+                <button class="btn">질문</button>
+            </div>
+            
+        </div>
+
+        <div class="vs">VS</div>
+        <div class="boss">
+            <div class="hp">체력바</div>
+            <div class="charicter">강사님</div>
+            <div class="chating">피곤함 지수</div>
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>
