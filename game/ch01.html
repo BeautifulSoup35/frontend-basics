@@ -76,6 +76,10 @@
 
             }
         }
+        .attack {
+            background-color: #dbdbdb;
+
+        }
     </style>
 </head>
 <body>
@@ -101,6 +105,17 @@
 
     </div>
     
+    <script>
+        const buttons = document.querySelectorAll(".btn");
+        //list들로 들어온다 btn클래스를 포함하는 태그들
+        buttons.map(btn => {
+            btn.onclick = () => {
+                btn.classList.add(".attack");
+            }
+        })
+
+
+    </script>
     
 </body>
 </html>
