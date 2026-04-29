@@ -10,7 +10,7 @@
                  height: 100vh;
             }
             .container {
-                 display: flex;
+                 display: flex; 
                  flex-direction: column;
                  justify-content: center;
                  align-items: center;
@@ -27,6 +27,7 @@
                 flex-direction: column;
                  justify-content: center;
                  align-items: center;
+                 margin-bottom: 20px;
                  box-sizing: border-box;
                  width: 500px;
                  border: 1px solid #dbdbdb;
@@ -104,6 +105,23 @@
 
                 }
             }
+
+            .user-table {
+                box-sizing:  border-box;
+                /* collapse : .표 만들때 테두리 하나로 합침 */
+                border-collapse: collapse;
+                border: 1px solid #dbdbdb;
+                border-radius: 4px;
+
+                width: 500px;
+                overflow: hidden;
+
+                &th, &td {
+                    box-sizing: border-box;
+                    border: 1px solid #dbdbdb;
+                    padding: 5xp 10px;
+                }
+            }
             
         </style>
     </head>
@@ -120,9 +138,27 @@
                 </div>
                 <button class="register-button">사용자 정보 등록</button>
             </div>
+            <div class="card">
+                 <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>사용자 이름</th>
+                            <th>비밀번호</th>
+                            <th>삭제</th>
+                        </tr>
+                    </thead>
+                    <tbody class="body-table">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tbody>
+                 </table>
+            </div>
         </div>
         
         <script>
+           
             let userList = [];
 
             function autoIncrement() {
@@ -160,12 +196,34 @@
                 
                }
                
-            const registerButton = document.querySelector(".register-button");
+            const registerButton = document.querySelector(".register-button");//버튼
+
+            registerButton.addEventListener("click", () => {
+                const inputs = Array.from(inputBoxs).map(inputBox => inputBox.querySelector("input"));
+                let newUser = {
+                    id: getNewId(),
+                }
+                Array.from(inputs).forEach(element => {
+                    newUser = {
+                        ...newUser,
+                        [element.name] : element.value,
+
+                    }
+                    
+                    // let tableB = [];
+                    // tableB.push(`<td>${newUserp.id}</td><td>${newUser.name}</td><td>${newUser.value}</td>`);
+                    
+                    
+                        
+                }
+            )});
+
             registerButton.onclick  = () => {
                 const inputs = Array.from(inputBoxs).map(inputBox => inputBox.querySelector("input"));
                 let newUser = {
                     id: getNewId(),
                 }
+                
                 Array.from(inputs).forEach(element => {
                     newUser = {
                         ...newUser,
@@ -177,9 +235,29 @@
                     ...userList,
                     newUser
                 ];
-                
+                tableRender();
                 console.log(userList);
-               }
+            }
+
+            function handleDeleteonClick() {
+                
+            }
+            
+            function tableRender() {
+                const bodyTable = document.querySelector(".user-table > tbody");
+                for(let user of userList) {
+                    bodyTable.innerHTML = (`
+                    <tr>
+                        <td>${user.id}</td>
+                        <td>${user.username}</td>
+                        <td>${user.password}</td>
+                        <td><button>삭제</button></td>
+                    </tr>
+                    
+                    
+                    `);
+                }
+            }
 
         </script>    
     </body>

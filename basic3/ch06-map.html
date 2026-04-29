@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="name-table-body">
+            </tbody>
+        </table>
+
+
+    <script>
+        //map (mapping) : 1 대 1로 대응하는것을 짝짓는다.
+        //[10, 20, 30] -> [100, 200, 300]
+        //["가", "나", "다"] -> ["한글가", "한글나", "한글다"]
+        //[(name : "가"), (name : "나"), (name : "다")] -> ["가", "나", "다"]
+        // object에서 String 으로 변경됨 
+
+        
+        
+
+
+        const arrayObject = {
+            arr: [],
+            map: (mapFx) => {//맵 함수가 들어옴
+                const newArray = [];
+                for (let i =0 ; i < arrayObject.arr.length; i++){//arrayObject.length
+                     newArray.push(mapFx(arrayObject.arr[i]));//mapFx적용한 값
+                }
+                return newArray;
+            },
+            filter: (pridicate) => {
+                const newArray =[];
+                for ( let i =0; i < arrayObject.arr.length; i++){
+                    if(pridicate(arrayObject.arr[i]))
+                    newArray.push(arrayObject.arr[i]);
+                }
+                return newArray;
+            }
+        }
+        const names = ["가", "나", "다"];
+        console.log(names);
+        arrayObject.arr = names;
+        console.log(arrayObject.map(name => "김" + name));
+        console.log(arrayObject.filter(a => !a.includes("나")));
+
+       
+
+        const box1 = {//객체
+                miniBox:  {
+                    content: "미니박스1",
+                }
+            };
+            const box2 = {//객체
+                miniBox : {
+                    content: "미니박스2",
+                }
+            };
+            const box3 = {//객체
+                miniBox: {
+                    content: "미니박스3",
+                }
+            };
+
+            const boxList = [box1, box2, box3];
+            const minBoxList = [box1.minibox];
+            const miniBoxList2 = [];
+            for(let box of boxList) {
+                miniBoxList2.push(box.miniBox);
+            }
+
+            //bvc                              
+
+            const minBoxList3 = boxList.map(box => box.miniBox);
+            const contents =boxList.map(box => (box.miniBox)).map(min => min.content);
+            // const contents2 = Array.from(boxList).map(box => box.miniBox.map(min => min.content));
+            const contents3 = minBoxList3.map(min => min.content)
+            console.log(contents3 );
+
+
+
+            const name = '권민주';
+            const message = `${name} 입니다.`;
+            console.log(message);
+
+            let nameList = ["권", "민", "주"];
+            ["<tr><tr><tr/><tr/>"];
+            let nameJs = nameList.map(name => `<tr><tr>${name}<tr/><tr/>`);
+            console.log(nameJs);
+            
+            arrayObject.arr = nameList;
+            nameJs2 = arrayObject.map(name => `<tr><tr>${name}<tr/><tr/>`);
+            console.log(nameJs2);
+
+            const tableBody = document.querySelector(".name-table-body");
+            console.log({tableBody});
+            tableBody.innerHTML= nameList.map(name => `<tr><tr>${name}<tr/><tr/>`).join("");
+                //해당 태그의 
+    </script>
+    
+</body>
+</html>
